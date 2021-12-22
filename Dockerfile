@@ -1,6 +1,8 @@
 # Copyright (c) ENKI Development Team.
 # Distributed under the terms of the Affero General Public License
 
+FROM scratch
+
 USER root
 
 # compilers required for ENKI libgnustep-base-dev --no-install-recommends

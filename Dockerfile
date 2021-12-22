@@ -3,8 +3,6 @@
 
 FROM scratch
 
-USER root
-
 # compilers required for ENKI libgnustep-base-dev --no-install-recommends
 RUN apt-get -y update
 RUN apt-get -y upgrade
@@ -20,16 +18,12 @@ RUN apt-get install -y  \
     zip
 RUN rm -rf /var/lib/apt/lists/*
 
-USER $NB_UID
-
 # install additional package...
 RUN pip install --no-cache-dir nbgitpuller
 RUN pip install --no-cache-dir deprecation
 RUN pip install --no-cache-dir numdifftools
 RUN pip install --no-cache-dir VESIcal
 RUN pip install --no-cache-dir -r requirements.txt
-
-USER root
 
 ENV LD_LIBRARY /usr/local/lib
 

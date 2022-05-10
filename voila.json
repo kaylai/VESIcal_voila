@@ -1,0 +1,5 @@
+{
+    "VoilaConfiguration": {
+        "file_whitelist": ["VESIcal_Output.xlsx"]
+    }
+}

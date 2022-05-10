@@ -7,17 +7,18 @@ RUN apt-get update \
 	&& rm -rf /var/lib/apt/lists/*
 
 # download and install gcc
-RUN wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz
-RUN tar xf gsl-latest.tar.gz -C /gsl-latest/
-RUN cd gsl-latest
-RUN ./configure \
+RUN wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz \
+	&& tar -xzf gsl-latest.tar.gz -C /gsl-latest/ \
+	&& rm gsl-latest.tar.gz
+RUN cd gsl-latest \
+	&& ./configure \
 	&& make \
 	&& make install
 
 # download and install thermoengine
 RUN git clone https://gitlab.com/ENKI-portal/ThermoEngine.git
-RUN cd ThermoEngine
-RUN make \
+RUN cd ThermoEngine \
+	&& make \
 	&& make install \
 	&& make pyinstall
 

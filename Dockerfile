@@ -10,7 +10,7 @@ RUN apt-get update \
 RUN wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz \
 	&& tar -xzf gsl-latest.tar.gz \
 	&& rm gsl-latest.tar.gz
-RUN cd gsl-latest \
+RUN cd gsl-2.7.1 \
 	&& ./configure \
 	&& make \
 	&& make install

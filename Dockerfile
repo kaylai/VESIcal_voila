@@ -14,7 +14,7 @@ RUN apt-get update \
 	&& apt-get install gcc-7 g++-7 -y \
 	&& update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-7 60 --slave /usr/bin/g++ g++ /usr/bin/g++-7 \
 	&& update-alternatives --config gcc \
-	&& apt-get install git \
+	&& apt-get install git -y \
 	&& rm -rf /var/lib/apt/lists/*
 
 # download and install gcc

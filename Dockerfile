@@ -8,7 +8,7 @@ RUN apt-get update \
 
 # download and install gcc
 RUN wget https://mirror.ibcp.fr/pub/gnu/gsl/gsl-latest.tar.gz
-RUN tar -xf gsl-latest.tar.gz -C /gsl-latest
+RUN tar xf gsl-latest.tar.gz -C /gsl-latest/
 RUN cd gsl-latest
 RUN ./configure \
 	&& make \
